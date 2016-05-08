@@ -1,0 +1,25 @@
+{
+  "name": "presentation",
+  "version": "1.0.0",
+  "description": "Ionic 2 tutorial presentation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ionic",
+    "presentation",
+    "v2",
+    "mobile",
+    "hybrid"
+  ],
+  "author": "Samuel Coelho",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.4",
+    "reveal.js": "^3.3.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
