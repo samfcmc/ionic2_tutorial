@@ -1,0 +1,34 @@
+<ion-navbar *navbar>
+  <ion-title>Create a new Meme</ion-title>
+</ion-navbar>
+
+<ion-content padding class="create">
+    
+    <ion-list>
+
+        <ion-item>
+            <ion-label floating>Top Text</ion-label>
+            <ion-input type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Bottom Text</ion-label>
+            <ion-input type="text"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+            <button (click)="choosePicture()">
+                <ion-icon name="image"></ion-icon>
+                Choose Picture
+            </button>
+            <p>The selected picture will show up here</p>
+        </ion-item>
+    
+    </ion-list>
+    
+    <button (click)="createMeme(meme)">
+        <ion-icon name="checkmark"></ion-icon>
+        Create Meme
+    </button>
+  
+</ion-content>

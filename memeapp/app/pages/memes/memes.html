@@ -1,0 +1,24 @@
+<ion-navbar *navbar>
+  <ion-title>Memes</ion-title>
+</ion-navbar>
+
+<ion-content padding class="memes">
+  <ion-searchbar [(ngModel)]="query" (input)="searchMemes($event, query)">
+  </ion-searchbar>
+  
+  <div class="spinner" *ngIf="loading" >
+    <ion-spinner class="spinner"></ion-spinner>  
+  </div>
+  <ion-card *ngFor="#meme of memes" *ngIf="!loading" >
+    <img src="images/default.jpg"/>
+    <ion-card-content>
+      <ion-card-title>
+        Example
+        </ion-card-title>
+      <p>
+        Bla bla bla
+      </p>
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>
