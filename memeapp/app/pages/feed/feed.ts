@@ -2,9 +2,11 @@ import {Page, NavController} from 'ionic-angular';
 import {MemeAPIClient} from '../../meme-generator/meme-generator-api';
 import {NgZone} from 'angular2/core';
 import {Meme} from '../meme/meme';
+import {MemeCard} from '../../meme-card/meme-card';
 
 @Page({
   templateUrl: 'build/pages/feed/feed.html',
+  directives: [MemeCard] 
 })
 export class Feed {
 	private memes: any[];

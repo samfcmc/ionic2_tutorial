@@ -3,7 +3,7 @@
   <name>WhyUNoApp</name>
   <description>An app to send memes to your friends</description>
   <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
-  <content src="index.html"/>
+  <content src="http://192.168.1.66:8100" original-src="index.html"/>
   <access origin="*"/>
   <allow-navigation href="*"/>
   <allow-intent href="http://*/*"/>

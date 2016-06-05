@@ -1,9 +1,11 @@
 import {Page, ViewController, NavOptions} from 'ionic-angular';
 import {MemeAPIClient} from '../../meme-generator/meme-generator-api';
 import {NgZone} from 'angular2/core';
+import {MemeCard} from '../../meme-card/meme-card';
 
 @Page({
   templateUrl: 'build/pages/generators/generators.html',
+  directives: [MemeCard] 
 })
 export class Generators {
 	private generators: any[];

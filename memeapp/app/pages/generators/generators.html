@@ -21,14 +21,11 @@
 	<ion-spinner class="spinner"></ion-spinner>  
   </div>
   <p *ngIf="errorOccured" >{{errorOccured}}</p>
-  <ion-card *ngFor="#generator of generators" (click)="selectGenerator(generator)">
-	<img [src]="generator.imageUrl"/>
-	<ion-card-content>
-	  <ion-card-title>
-		{{generator.displayName}}  
-	  </ion-card-title>
-	</ion-card-content>
-  </ion-card>
+  <meme-card *ngFor="#generator of generators" 
+	(click)="selectGenerator(generator)"
+	[title]="generator.displayName"
+	[imageUrl]="generator.imageUrl">
+  </meme-card>
   	<ion-infinite-scroll (infinite)="loadNextPage($event)">
 		<ion-infinite-scroll-content
 			loadingSpinner="bubbles"

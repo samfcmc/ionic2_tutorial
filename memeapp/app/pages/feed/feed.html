@@ -14,14 +14,9 @@
 		refreshingSpinner="circles">
 		</ion-refresher-content>                    
 	</ion-refresher>
-	<ion-card *ngFor="#meme of memes" (click)="showMeme(meme)"  >
-		<img src="{{meme.instanceImageUrl}}"/>
-		<ion-card-content>
-			<ion-card-title>
-				{{meme.displayName}}
-			</ion-card-title>
-		</ion-card-content>
-	</ion-card>
+	<meme-card *ngFor="#meme of memes" (click)="showMeme(meme)"
+	[title]="meme.displayName" [imageUrl]="meme.instanceImageUrl">
+	</meme-card>
 	<ion-infinite-scroll (infinite)="loadNextPage($event)">
 		<ion-infinite-scroll-content
 			loadingSpinner="bubbles"
