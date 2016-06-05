@@ -1,9 +1,31 @@
 <ion-navbar *navbar>
-  <ion-title>Feed</ion-title>
+	<ion-title>Feed</ion-title>
 </ion-navbar>
 
 <ion-content padding class="feed">
-  <p>
-    A lot of memes will appear here :)
-  </p>
+	<div class="spinner" *ngIf="loading" >
+		<ion-spinner class="spinner"></ion-spinner>  
+	</div>
+	<p *ngIf="error">An error ocurred. Try again</p>
+	<p *ngIf="(!memes || memes.length == 0) && !loading" >Nothing to show...</p>
+	<ion-refresher (refresh)="refresh($event)">               
+		<ion-refresher-content 
+		pullingIcon="arrow-down"
+		refreshingSpinner="circles">
+		</ion-refresher-content>                    
+	</ion-refresher>
+	<ion-card *ngFor="#meme of memes" (click)="showMeme(meme)"  >
+		<img src="{{meme.instanceImageUrl}}"/>
+		<ion-card-content>
+			<ion-card-title>
+				{{meme.displayName}}
+			</ion-card-title>
+		</ion-card-content>
+	</ion-card>
+	<ion-infinite-scroll (infinite)="loadNextPage($event)">
+		<ion-infinite-scroll-content
+			loadingSpinner="bubbles"
+			loadingText="Loading more awesome memes for you">
+		</ion-infinite-scroll-content>
+	</ion-infinite-scroll>
 </ion-content>

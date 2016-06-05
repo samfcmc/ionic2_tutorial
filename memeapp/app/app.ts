@@ -1,12 +1,13 @@
 import {App, Platform} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {TabsPage} from './pages/tabs/tabs';
+import {JSONP_PROVIDERS} from 'angular2/http';
 import {MemeAPIClient} from './meme-generator/meme-generator-api';
 
 @App({
   template: '<ion-nav [root]="rootPage"></ion-nav>',
   config: {}, // http://ionicframework.com/docs/v2/api/config/Config/
-  providers: [MemeAPIClient] 
+  providers: [MemeAPIClient, JSONP_PROVIDERS] 
 })
 export class MyApp {
   rootPage: any = TabsPage;

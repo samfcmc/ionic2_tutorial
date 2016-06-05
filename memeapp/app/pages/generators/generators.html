@@ -1,0 +1,39 @@
+<ion-toolbar *navbar>
+	<ion-title>Select a Meme</ion-title>
+  <ion-buttons start>
+	  <button (click)="cancel()">
+	  	<ion-icon name="close">
+		</ion-icon>
+	  </button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-toolbar>
+	<ion-searchbar [(ngModel)]="query" (input)="search($event, query)">
+ 	</ion-searchbar>
+</ion-toolbar>
+
+
+<ion-content padding class="generators">
+  
+  
+  <div class="spinner" *ngIf="loading" >
+	<ion-spinner class="spinner"></ion-spinner>  
+  </div>
+  <p *ngIf="errorOccured" >{{errorOccured}}</p>
+  <ion-card *ngFor="#generator of generators" (click)="selectGenerator(generator)">
+	<img [src]="generator.imageUrl"/>
+	<ion-card-content>
+	  <ion-card-title>
+		{{generator.displayName}}  
+	  </ion-card-title>
+	</ion-card-content>
+  </ion-card>
+  	<ion-infinite-scroll (infinite)="loadNextPage($event)">
+		<ion-infinite-scroll-content
+			loadingSpinner="bubbles"
+			loadingText="Loading more awesome memes for you">
+		</ion-infinite-scroll-content>
+	</ion-infinite-scroll>
+  
+</ion-content>

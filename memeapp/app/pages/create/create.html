@@ -8,25 +8,31 @@
 
         <ion-item>
             <ion-label floating>Top Text</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input type="text" [(ngModel)]="newMeme.topText"></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-label floating>Bottom Text</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input type="text" [(ngModel)]="newMeme.bottomText"></ion-input>
         </ion-item>
         
         <ion-item>
-            <button (click)="choosePicture()">
+            <button (click)="chooseGenerator()">
                 <ion-icon name="image"></ion-icon>
-                Choose Picture
+                Choose Meme
             </button>
-            <p>The selected picture will show up here</p>
+            <p *ngIf="!selectedGenerator">
+                The selected picture will show up here
+            </p>
         </ion-item>
+		<ion-item *ngIf="selectedGenerator">
+			<img [src]="selectedGenerator.imageUrl" alt="">
+			<p>{{selectedGenerator.displayName}}</p>
+		</ion-item>
     
     </ion-list>
     
-    <button (click)="createMeme(meme)">
+    <button (click)="createMeme(newMeme)">
         <ion-icon name="checkmark"></ion-icon>
         Create Meme
     </button>
