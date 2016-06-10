@@ -1,4 +1,4 @@
-import {Component, Input} from 'angular2/core'
+import {Component, Input} from '@angular/core'
 
 @Component({
 	selector: 'meme-card',
@@ -7,12 +7,12 @@ import {Component, Input} from 'angular2/core'
 export class MemeCard {
 	@Input() title: string;
 	@Input() imageUrl: string;
+	@Input() text: string;
 	
 	constructor() {
 		
 	}
 	
 	ngOnInit() {
-		console.log('test');
 	}
 }

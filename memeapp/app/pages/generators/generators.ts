@@ -1,9 +1,9 @@
-import {Page, ViewController, NavOptions} from 'ionic-angular';
+import {ViewController, NavOptions} from 'ionic-angular';
 import {MemeAPIClient} from '../../meme-generator/meme-generator-api';
-import {NgZone} from 'angular2/core';
+import {NgZone, Component} from '@angular/core';
 import {MemeCard} from '../../meme-card/meme-card';
 
-@Page({
+@Component({
   templateUrl: 'build/pages/generators/generators.html',
   directives: [MemeCard] 
 })

@@ -1,8 +1,9 @@
-import {Page} from 'ionic-angular';
+
+import {Component} from '@angular/core';
 import {Feed} from '../feed/feed';
 import {Create} from '../create/create';
 
-@Page({
+@Component({
   templateUrl: 'build/pages/tabs/tabs.html'
 })
 export class TabsPage {

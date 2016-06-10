@@ -1,9 +1,10 @@
-import {Page, NavController, Modal, Alert} from 'ionic-angular';
+import {NavController, Modal, Alert} from 'ionic-angular';
+import {Component} from '@angular/core';
 import {Generators} from '../generators/generators';
 import {MemeAPIClient} from '../../meme-generator/meme-generator-api';
 import {Meme} from '../meme/meme';
 
-@Page({
+@Component({
   templateUrl: 'build/pages/create/create.html',
 })
 export class Create {

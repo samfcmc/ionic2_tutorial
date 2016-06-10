@@ -8,16 +8,17 @@
 	</div>
 	<p *ngIf="error">An error ocurred. Try again</p>
 	<p *ngIf="(!memes || memes.length == 0) && !loading" >Nothing to show...</p>
-	<ion-refresher (refresh)="refresh($event)">               
+	<ion-refresher (ionRefresh)="refresh($event)">               
 		<ion-refresher-content 
 		pullingIcon="arrow-down"
 		refreshingSpinner="circles">
 		</ion-refresher-content>                    
 	</ion-refresher>
-	<meme-card *ngFor="#meme of memes" (click)="showMeme(meme)"
-	[title]="meme.displayName" [imageUrl]="meme.instanceImageUrl">
+	<meme-card *ngFor="let meme of memes" (click)="showMeme(meme)"
+	[title]="meme.text0" [imageUrl]="meme.instanceImageUrl"
+	[text]="meme.displayName">
 	</meme-card>
-	<ion-infinite-scroll (infinite)="loadNextPage($event)">
+	<ion-infinite-scroll (ionInfinite)="loadNextPage($event)">
 		<ion-infinite-scroll-content
 			loadingSpinner="bubbles"
 			loadingText="Loading more awesome memes for you">

@@ -1,10 +1,10 @@
-import {Page, NavController} from 'ionic-angular';
+import {NavController} from 'ionic-angular';
 import {MemeAPIClient} from '../../meme-generator/meme-generator-api';
-import {NgZone} from 'angular2/core';
+import {Component, NgZone} from '@angular/core';
 import {Meme} from '../meme/meme';
 import {MemeCard} from '../../meme-card/meme-card';
 
-@Page({
+@Component({
   templateUrl: 'build/pages/feed/feed.html',
   directives: [MemeCard] 
 })

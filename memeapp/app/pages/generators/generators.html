@@ -13,9 +13,7 @@
  	</ion-searchbar>
 </ion-toolbar>
 
-
 <ion-content padding class="generators">
-  
   
   <div class="spinner" *ngIf="loading" >
 	<ion-spinner class="spinner"></ion-spinner>  
@@ -26,7 +24,7 @@
 	[title]="generator.displayName"
 	[imageUrl]="generator.imageUrl">
   </meme-card>
-  	<ion-infinite-scroll (infinite)="loadNextPage($event)">
+  	<ion-infinite-scroll (ionInfinite)="loadNextPage($event)">
 		<ion-infinite-scroll-content
 			loadingSpinner="bubbles"
 			loadingText="Loading more awesome memes for you">

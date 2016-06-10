@@ -1,7 +1,8 @@
-import {Injectable} from 'angular2/core';
-import {Http, RequestOptionsArgs, BaseRequestOptions, URLSearchParams} from 'angular2/http';
+import {Injectable} from '@angular/core';
+import {Http, RequestOptionsArgs, BaseRequestOptions, URLSearchParams} from '@angular/http';
 
-const BASE_URL = 'http://version1.api.memegenerator.net';
+//const BASE_URL = 'http://version1.api.memegenerator.net';
+const BASE_URL = 'http://localhost:3000/api'
 const ENDPOINTS = {
 	generatorsByNew: 'Generators_Select_ByNew',
 	instancesByNew: 'Instances_Select_ByNew',
